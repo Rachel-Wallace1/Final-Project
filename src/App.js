@@ -50,7 +50,7 @@ const WeatherApp = () => {
         console.log(lat, lng)
         try {
             const response = await axios.get(
-                `http://api.weatherapi.com/v1/current.json?key=2a1769a877554f7e88133029231105&q=${lat},${lng}`
+                `https://api.weatherapi.com/v1/current.json?key=2a1769a877554f7e88133029231105&q=${lat},${lng}`
             );
             console.log(response)
             const weather = {
@@ -69,7 +69,7 @@ const WeatherApp = () => {
     const getForecastByCoordinates = async (lat, lng) => {
         try {
             const response = await axios.get(
-                `http://api.weatherapi.com/v1/forecast.json?key=2a1769a877554f7e88133029231105&q=${lat},${lng}&days=3`
+                `https://api.weatherapi.com/v1/forecast.json?key=2a1769a877554f7e88133029231105&q=${lat},${lng}&days=3`
             );
             const forecast = response.data.forecast.forecastday.map((item) => ({
                 dateTime: item.date,
